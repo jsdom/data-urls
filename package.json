@@ -34,10 +34,6 @@
       "lcov",
       "text-summary"
     ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "!/node_modules/abab/lib/atob.js"
-    ],
     "testEnvironment": "node",
     "testMatch": [
       "<rootDir>/test/**/*.js"

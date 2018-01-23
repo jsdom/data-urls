@@ -25,12 +25,8 @@ describe("base64.json", () => {
 });
 
 describe("data-urls.json", () => {
-  for (let [dataURL, expectedMIMEType, expectedBodyBytes] of dataURLsTestCases) {
+  for (const [dataURL, expectedMIMEType, expectedBodyBytes] of dataURLsTestCases) {
     test(dataURL, () => {
-      if (expectedMIMEType === "") {
-        expectedMIMEType = "text/plain;charset=US-ASCII";
-      }
-
       const result = parse(dataURL);
 
       if (expectedMIMEType === null) {
