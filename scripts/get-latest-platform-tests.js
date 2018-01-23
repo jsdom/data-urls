@@ -18,7 +18,7 @@ process.on("unhandledRejection", err => {
 // 1. Go to https://github.com/w3c/web-platform-tests/tree/master/fetch/data-urls
 // 2. Press "y" on your keyboard to get a permalink
 // 3. Copy the commit hash
-const commitHash = "d7d4b71f9d215aa8ff249a01f138ddbd745b9a30";
+const commitHash = "990e1c88fb2815bebbc2aca1b8f4daacde3f0c9b";
 
 const urlPrefix = `https://raw.githubusercontent.com/w3c/web-platform-tests/${commitHash}` +
                   `/fetch/data-urls/resources/`;
