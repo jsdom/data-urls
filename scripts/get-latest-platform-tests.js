@@ -25,8 +25,9 @@ const urlPrefix = `https://raw.githubusercontent.com/w3c/web-platform-tests/${co
 
 const files = ["base64.json", "data-urls.json"];
 
+const dir = path.resolve(__dirname, "..", "test", "web-platform-tests");
+
 for (const file of files) {
   const url = urlPrefix + file;
-  const targetFile = path.resolve(__dirname, "..", "test", "web-platform-tests", file);
-  request(url).pipe(fs.createWriteStream(targetFile));
+  request(url).pipe(fs.createWriteStream(path.join(dir, file)));
 }
