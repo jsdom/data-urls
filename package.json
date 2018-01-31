@@ -1,5 +1,5 @@
 {
-  "name": "data-url",
+  "name": "data-urls",
   "description": "Parses data: URLs",
   "keywords": [
     "data url",
@@ -12,7 +12,7 @@
   "version": "1.0.0-pre",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "MIT",
-  "repository": "jsdom/data-url",
+  "repository": "jsdom/data-urls",
   "main": "lib/parser.js",
   "files": [
     "lib/"
