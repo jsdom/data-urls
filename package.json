@@ -40,8 +40,8 @@
     ]
   },
   "dependencies": {
-    "abab": "^1.0.4",
-    "whatwg-mimetype": "^2.0.0",
-    "whatwg-url": "^6.4.0"
+    "abab": "^2.0.0",
+    "whatwg-mimetype": "^2.1.0",
+    "whatwg-url": "^7.0.0"
   }
 }
