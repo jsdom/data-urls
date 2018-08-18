@@ -32,7 +32,7 @@ As shown in the examples above, both of these have useful `toString()` methods f
 
 ### A word of caution on string decoding
 
-Because Node.js's `Buffer.prototype.toString()` assumes a UTF-8 encoding, simply doing `dataURL.body.toString()` may not work correctly if the `data:` URLs contents were not originally written in UTF-8. This includes if the encoding is "US-ASCII", [aka windows-1252](https://encoding.spec.whatwg.org/#names-and-labels), which is notable for being the default in many cases.
+Because Node.js's `Buffer.prototype.toString()` assumes a UTF-8 encoding, simply doing `dataURL.body.toString()` may not work correctly if the `data:` URL's contents were not originally written in UTF-8. This includes if the encoding is "US-ASCII", [aka windows-1252](https://encoding.spec.whatwg.org/#names-and-labels), which is notable for being the default in many cases.
 
 A more complete decoding example would use the [whatwg-encoding](https://www.npmjs.com/package/whatwg-encoding) package as follows:
 
