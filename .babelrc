@@ -4,7 +4,7 @@
       "plugins": [
         ["istanbul", {
           "exclude": [
-            "!**/node_modules/abab/lib/atob.js",
+            "!**/node_modules/abab/**",
             "**/test/**"
           ]
         }]
