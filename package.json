@@ -24,8 +24,8 @@
     "pretest": "node scripts/get-latest-platform-tests.js"
   },
   "devDependencies": {
-    "eslint": "^5.4.0",
-    "jest": "^23.5.0",
+    "eslint": "^5.7.0",
+    "jest": "^23.6.0",
     "request": "^2.88.0"
   },
   "jest": {
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "abab": "^2.0.0",
-    "whatwg-mimetype": "^2.1.0",
+    "whatwg-mimetype": "^2.2.0",
     "whatwg-url": "^7.0.0"
   }
 }
