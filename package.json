@@ -37,6 +37,9 @@
     "testEnvironment": "node",
     "testMatch": [
       "<rootDir>/test/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/(?!(abab/lib/atob.js))"
     ]
   },
   "dependencies": {
