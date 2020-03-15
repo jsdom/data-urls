@@ -31,7 +31,7 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
-    "request": "^2.88.2"
+    "node-fetch": "^2.6.0"
   },
   "engines": {
     "node": ">=10"
