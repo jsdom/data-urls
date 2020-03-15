@@ -6,7 +6,7 @@ if (process.env.NO_UPDATE) {
 
 const path = require("path");
 const fs = require("fs");
-const request = require("request");
+const fetch = require("node-fetch");
 
 process.on("unhandledRejection", err => {
   throw err;
@@ -28,5 +28,7 @@ const files = ["base64.json", "data-urls.json"];
 for (const file of files) {
   const url = urlPrefix + file;
   const targetFile = path.resolve(__dirname, "..", "test", "web-platform-tests", file);
-  request(url).pipe(fs.createWriteStream(targetFile));
+  fetch(url).then(res => {
+    res.body.pipe(fs.createWriteStream(targetFile));
+  });
 }
