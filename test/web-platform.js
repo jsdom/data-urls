@@ -17,8 +17,8 @@ describe("base64.json", () => {
         expect(result.mimeType.parameters.size).toEqual(1);
         expect(result.mimeType.parameters.get("charset")).toEqual("US-ASCII");
 
-        expect(result.body.constructor).toEqual(Buffer);
-        expect(result.body).toEqual(Buffer.from(expectedBodyBytes));
+        expect(result.body.constructor).toEqual(Uint8Array);
+        expect(result.body).toEqual(Uint8Array.from(expectedBodyBytes));
       }
     });
   }
@@ -34,8 +34,8 @@ describe("data-urls.json", () => {
       } else {
         expect(result.mimeType.toString()).toEqual(expectedMIMEType);
 
-        expect(result.body.constructor).toEqual(Buffer);
-        expect(result.body).toEqual(Buffer.from(expectedBodyBytes));
+        expect(result.body.constructor).toEqual(Uint8Array);
+        expect(result.body).toEqual(Uint8Array.from(expectedBodyBytes));
       }
     });
   }
