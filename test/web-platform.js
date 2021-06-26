@@ -5,7 +5,7 @@ const parse = require("../lib/parser.js");
 
 describe("base64.json", () => {
   for (const [input, expectedBodyBytes] of base64TestCases) {
-    const dataURL = "data:;base64," + input;
+    const dataURL = `data:;base64,${input}`;
     test(dataURL, () => {
       const result = parse(dataURL);
 
