@@ -26,7 +26,7 @@
   "dependencies": {
     "abab": "^2.0.3",
     "whatwg-mimetype": "^2.3.0",
-    "whatwg-url": "^8.2.1"
+    "whatwg-url": "^9.0.0"
   },
   "devDependencies": {
     "@domenic/eslint-config": "^1.2.0",
@@ -35,7 +35,7 @@
     "node-fetch": "^2.6.1"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "jest": {
     "coverageDirectory": "coverage",
