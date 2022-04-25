@@ -9,7 +9,7 @@
     "fetch",
     "whatwg"
   ],
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "MIT",
   "repository": "jsdom/data-urls",
