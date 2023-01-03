@@ -15,10 +15,10 @@ process.on("unhandledRejection", err => {
 // Pin to specific version, reflecting the spec version in the readme.
 //
 // To get the latest commit:
-// 1. Go to https://github.com/w3c/web-platform-tests/tree/master/fetch/data-urls
+// 1. Go to https://github.com/web-platform-tests/wpt/tree/master/fetch/data-urls
 // 2. Press "y" on your keyboard to get a permalink
 // 3. Copy the commit hash
-const commitHash = "42f1c20396276314892ea2e3cca6e3611b9363ff";
+const commitHash = "d9d78543960a04ea8ad8f1aa3c7536b6a9a87d9a";
 
 const urlPrefix = `https://raw.githubusercontent.com/w3c/web-platform-tests/${commitHash}` +
                   `/fetch/data-urls/resources/`;
