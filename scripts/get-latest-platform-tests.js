@@ -4,13 +4,8 @@ if (process.env.NO_UPDATE) {
   process.exit(0);
 }
 
-const path = require("path");
-const fs = require("fs");
-const fetch = require("minipass-fetch");
-
-process.on("unhandledRejection", err => {
-  throw err;
-});
+const path = require("node:path");
+const fs = require("node:fs/promises");
 
 // Pin to specific version, reflecting the spec version in the readme.
 //
@@ -25,10 +20,17 @@ const urlPrefix = `https://raw.githubusercontent.com/w3c/web-platform-tests/${co
 
 const files = ["base64.json", "data-urls.json"];
 
-for (const file of files) {
-  const url = urlPrefix + file;
-  const targetFile = path.resolve(__dirname, "..", "test", "web-platform-tests", file);
-  fetch(url).then(res => {
-    res.body.pipe(fs.createWriteStream(targetFile));
-  });
+async function main() {
+  await Promise.all(files.map(async file => {
+    const url = urlPrefix + file;
+    const targetFile = path.resolve(__dirname, "..", "test", "web-platform-tests", file);
+
+    const res = await fetch(url);
+    await fs.writeFile(targetFile, res.body);
+  }));
 }
+
+main().catch(e => {
+  console.error(e.stack);
+  process.exit(1);
+});
