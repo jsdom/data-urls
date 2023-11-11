@@ -1,4 +1,6 @@
 "use strict";
+const { describe, test } = require("node:test");
+const assert = require("node:assert");
 const base64TestCases = require("./web-platform-tests/base64.json");
 const dataURLsTestCases = require("./web-platform-tests/data-urls.json");
 const parse = require("../lib/parser.js");
@@ -10,15 +12,15 @@ describe("base64.json", () => {
       const result = parse(dataURL);
 
       if (expectedBodyBytes === null) {
-        expect(result).toEqual(null);
+        assert.equal(result, null);
       } else {
-        expect(result.mimeType.type).toEqual("text");
-        expect(result.mimeType.subtype).toEqual("plain");
-        expect(result.mimeType.parameters.size).toEqual(1);
-        expect(result.mimeType.parameters.get("charset")).toEqual("US-ASCII");
+        assert.equal(result.mimeType.type, "text");
+        assert.equal(result.mimeType.subtype, "plain");
+        assert.equal(result.mimeType.parameters.size, 1);
+        assert.equal(result.mimeType.parameters.get("charset"), "US-ASCII");
 
-        expect(result.body.constructor).toEqual(Uint8Array);
-        expect(result.body).toEqual(Uint8Array.from(expectedBodyBytes));
+        assert.equal(result.body.constructor, Uint8Array);
+        assert.deepEqual(result.body, Uint8Array.from(expectedBodyBytes));
       }
     });
   }
@@ -30,12 +32,12 @@ describe("data-urls.json", () => {
       const result = parse(dataURL);
 
       if (expectedMIMEType === null) {
-        expect(result).toEqual(null);
+        assert.equal(result, null);
       } else {
-        expect(result.mimeType.toString()).toEqual(expectedMIMEType);
+        assert.equal(result.mimeType.toString(), expectedMIMEType);
 
-        expect(result.body.constructor).toEqual(Uint8Array);
-        expect(result.body).toEqual(Uint8Array.from(expectedBodyBytes));
+        assert.equal(result.body.constructor, Uint8Array);
+        assert.deepEqual(result.body, Uint8Array.from(expectedBodyBytes));
       }
     });
   }
