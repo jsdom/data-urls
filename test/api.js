@@ -16,6 +16,23 @@ describe("Smoke tests via README examples", () => {
     assert.deepEqual(textExample.body, new Uint8Array([72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]));
   });
 
+  it("should round-trip no-type as expected", () => {
+    const textExample = parseDataURL("data:,H%E9llo!");
+    assert.equal(textExample.mimeType.toString(), "text/plain;charset=US-ASCII");
+    assert.equal(textExample.body.constructor, Uint8Array);
+
+    const encodingLabel = textExample.mimeType.parameters.get("charset") ?? "utf-8";
+    assert.equal(encodingLabel, "US-ASCII");
+
+    const correctDecoder = new TextDecoder(encodingLabel);
+    const bodyCorrectlyDecoded = correctDecoder.decode(textExample.body);
+    assert.equal(bodyCorrectlyDecoded, "Héllo!", "correctly decoded");
+
+    const incorrectDecoder = new TextDecoder("utf-8");
+    const bodyIncorrectlyDecoded = incorrectDecoder.decode(textExample.body);
+    assert.equal(bodyIncorrectlyDecoded, "H�llo!", "incorrectly decoded");
+  });
+
   it("should parse text/html as expected", () => {
     const htmlExample = parseDataURL("data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E");
     assert.equal(htmlExample.mimeType.toString(), "text/html");
