@@ -23,11 +23,11 @@
   "scripts": {
     "test": "node --test",
     "coverage": "c8 node --test --experimental-test-coverage",
-    "lint": "eslint .",
-    "pretest": "node scripts/get-latest-platform-tests.js"
+    "lint": "eslint",
+    "pretest": "node scripts/get-latest-platform-tests.mjs"
   },
   "dependencies": {
-    "whatwg-mimetype": "^4.0.0",
+    "whatwg-mimetype": "^5.0.0",
     "whatwg-url": "^15.1.0"
   },
   "devDependencies": {
@@ -41,7 +41,6 @@
   },
   "c8": {
     "reporter": [
-      "text",
       "html"
     ],
     "exclude": [
