@@ -1,15 +1,15 @@
 "use strict";
 const { describe, test } = require("node:test");
-const assert = require("node:assert");
+const assert = require("node:assert/strict");
 const base64TestCases = require("./web-platform-tests/base64.json");
 const dataURLsTestCases = require("./web-platform-tests/data-urls.json");
-const parse = require("../lib/parser.js");
+const parseDataURL = require("..");
 
 describe("base64.json", () => {
   for (const [input, expectedBodyBytes] of base64TestCases) {
     const dataURL = `data:;base64,${input}`;
     test(dataURL, () => {
-      const result = parse(dataURL);
+      const result = parseDataURL(dataURL);
 
       if (expectedBodyBytes === null) {
         assert.equal(result, null);
@@ -29,7 +29,7 @@ describe("base64.json", () => {
 describe("data-urls.json", () => {
   for (const [dataURL, expectedMIMEType, expectedBodyBytes] of dataURLsTestCases) {
     test(dataURL, () => {
-      const result = parse(dataURL);
+      const result = parseDataURL(dataURL);
 
       if (expectedMIMEType === null) {
         assert.equal(result, null);

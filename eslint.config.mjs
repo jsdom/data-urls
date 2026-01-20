@@ -9,13 +9,12 @@ export default [
       globals: globals.node
     }
   },
-  ...domenicConfig,
   {
-    files: ["scripts/**.js"],
-    rules: {
-      "no-process-env": "off",
-      "no-process-exit": "off",
-      "no-console": "off"
+    files: ["**/*.mjs"],
+    languageOptions: {
+      sourceType: "module",
+      globals: globals.node
     }
-  }
+  },
+  ...domenicConfig
 ];
