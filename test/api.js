@@ -4,8 +4,8 @@ const assert = require("node:assert/strict");
 const parseDataURL = require("..");
 /*
   eslint
-  array-bracket-newline: ["error", "consistent"]
-  array-element-newline: "off"
+  @stylistic/array-bracket-newline: ["error", "consistent"]
+  @stylistic/array-element-newline: "off"
 */
 
 describe("Smoke tests via README examples", () => {
