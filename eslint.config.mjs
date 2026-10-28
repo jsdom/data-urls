@@ -4,6 +4,11 @@ import globals from "globals";
 
 export default [
   {
+    ignores: ["coverage/"],
+  },
+  ...domenicConfig,
+  ...domenicStylisticConfig,
+  {
     files: ["**/*.js"],
     languageOptions: {
       sourceType: "commonjs",
@@ -13,10 +18,7 @@ export default [
   {
     files: ["**/*.mjs"],
     languageOptions: {
-      sourceType: "module",
-      globals: globals.node,
+      globals: globals.nodeBuiltin,
     },
   },
-  ...domenicConfig,
-  ...domenicStylisticConfig,
 ];

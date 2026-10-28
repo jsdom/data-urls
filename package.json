@@ -19,23 +19,25 @@
   "files": [
     "lib/"
   ],
+  "type": "commonjs",
   "main": "lib/parser.js",
   "scripts": {
-    "test": "node --test",
-    "coverage": "c8 node --test --experimental-test-coverage",
     "check": "npm run lint && npm run fmt:check",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "pretest": "node scripts/get-latest-platform-tests.mjs"
+    "pretest": "node scripts/get-latest-platform-tests.mjs",
+    "test": "node --test",
+    "precoverage": "npm run pretest",
+    "coverage": "c8 node --test"
   },
   "dependencies": {
     "whatwg-mimetype": "^5.0.0",
-    "whatwg-url": "^17.1.2"
+    "whatwg-url": "^17.3.0"
   },
   "devDependencies": {
-    "@domenic/eslint-config": "^6.0.0",
+    "@domenic/eslint-config": "^6.1.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "c8": "^12.0.0",
     "eslint": "^10.13.0",
@@ -48,6 +50,7 @@
       "test/"
     ],
     "reporter": [
+      "text",
       "html"
     ]
   },
