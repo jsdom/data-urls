@@ -51,10 +51,7 @@ describe("Smoke tests via README examples", () => {
 
   it("should parse img/png base64 as expected", () => {
     const pngExample = parseDataURL(
-      "data:image/png;base64,iVBORw0KGgoAAA" +
-        "ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4" +
-        "//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU" +
-        "5ErkJggg==",
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
     );
     assert.equal(pngExample.mimeType.toString(), "image/png");
     assert.equal(pngExample.body.constructor, Uint8Array);

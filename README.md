@@ -14,10 +14,7 @@ console.log(htmlExample.mimeType.toString()); // "text/html"
 console.log(htmlExample.body); // Uint8Array(22) [ 60, 104, 49, 62, 72, 101, … ]
 
 const pngExample = parseDataURL(
-  "data:image/png;base64,iVBORw0KGgoAAA" +
-    "ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4" +
-    "//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU" +
-    "5ErkJggg==",
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
 );
 console.log(pngExample.mimeType.toString()); // "image/png"
 console.log(pngExample.body); // Uint8Array(85) [ 137, 80, 78, 71, 13, 10, … ]

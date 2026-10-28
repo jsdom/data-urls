@@ -13,9 +13,7 @@ if (process.env.NO_UPDATE) {
 // 3. Copy the commit hash
 const commitHash = "2dc0ad4f330f0b5647d11b00ae7437b668cb8df3";
 
-const urlPrefix =
-  `https://raw.githubusercontent.com/w3c/web-platform-tests/${commitHash}` +
-  `/fetch/data-urls/resources/`;
+const urlPrefix = `https://raw.githubusercontent.com/w3c/web-platform-tests/${commitHash}/fetch/data-urls/resources/`;
 
 const files = ["base64.json", "data-urls.json"];
 
