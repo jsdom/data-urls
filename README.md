@@ -7,18 +7,20 @@ const parseDataURL = require("data-urls");
 
 const textExample = parseDataURL("data:,Hello%2C%20World!");
 console.log(textExample.mimeType.toString()); // "text/plain;charset=US-ASCII"
-console.log(textExample.body);                // Uint8Array(13) [ 72, 101, 108, 108, 111, 44, … ]
+console.log(textExample.body); // Uint8Array(13) [ 72, 101, 108, 108, 111, 44, … ]
 
 const htmlExample = parseDataURL("data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E");
 console.log(htmlExample.mimeType.toString()); // "text/html"
-console.log(htmlExample.body);                // Uint8Array(22) [ 60, 104, 49, 62, 72, 101, … ]
+console.log(htmlExample.body); // Uint8Array(22) [ 60, 104, 49, 62, 72, 101, … ]
 
-const pngExample = parseDataURL("data:image/png;base64,iVBORw0KGgoAAA" +
-                                "ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4" +
-                                "//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU" +
-                                "5ErkJggg==");
+const pngExample = parseDataURL(
+  "data:image/png;base64,iVBORw0KGgoAAA" +
+    "ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4" +
+    "//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU" +
+    "5ErkJggg==",
+);
 console.log(pngExample.mimeType.toString()); // "image/png"
-console.log(pngExample.body);                // Uint8Array(85) [ 137, 80, 78, 71, 13, 10, … ]
+console.log(pngExample.body); // Uint8Array(85) [ 137, 80, 78, 71, 13, 10, … ]
 ```
 
 ## API
