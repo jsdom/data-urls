@@ -1,29 +1,33 @@
 {
   "name": "data-urls",
+  "version": "8.0.0",
   "description": "Parses data: URLs",
   "keywords": [
-    "data url",
     "data uri",
+    "data url",
     "data:",
-    "http",
     "fetch",
+    "http",
     "whatwg"
   ],
-  "version": "8.0.0",
-  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "license": "MIT",
+  "author": "Domenic Denicola <d@domenic.me> (https://domenic.me/)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jsdom/data-urls.git"
   },
-  "main": "lib/parser.js",
   "files": [
     "lib/"
   ],
+  "main": "lib/parser.js",
   "scripts": {
     "test": "node --test",
     "coverage": "c8 node --test --experimental-test-coverage",
+    "check": "npm run lint && npm run fmt:check",
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "pretest": "node scripts/get-latest-platform-tests.mjs"
   },
   "dependencies": {
@@ -31,22 +35,23 @@
     "whatwg-url": "^17.1.2"
   },
   "devDependencies": {
-    "@domenic/eslint-config": "^5.1.0",
+    "@domenic/eslint-config": "^6.0.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "c8": "^12.0.0",
-    "eslint": "^10.12.0",
-    "globals": "^17.13.0"
-  },
-  "engines": {
-    "node": "^22.14.0 || >=24.0.0"
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "oxfmt": "0.75.0"
   },
   "c8": {
-    "reporter": [
-      "html"
-    ],
     "exclude": [
       "scripts/",
       "test/"
+    ],
+    "reporter": [
+      "html"
     ]
+  },
+  "engines": {
+    "node": "^22.14.0 || >=24.0.0"
   }
 }

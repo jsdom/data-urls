@@ -7,16 +7,16 @@ export default [
     files: ["**/*.js"],
     languageOptions: {
       sourceType: "commonjs",
-      globals: globals.node
-    }
+      globals: globals.node,
+    },
   },
   {
     files: ["**/*.mjs"],
     languageOptions: {
       sourceType: "module",
-      globals: globals.node
-    }
+      globals: globals.node,
+    },
   },
   ...domenicConfig,
-  ...domenicStylisticConfig
+  ...domenicStylisticConfig,
 ];
